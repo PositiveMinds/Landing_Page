@@ -1,0 +1,360 @@
+:root {
+  --milky: #dfc7c6;
+  --dark-milky: #9e8685;
+  --dark-orange: #fe5a04;
+  --light-green: #52b457;
+  --silver: #f1f1f1;
+  --main-white: #ffffff;
+  --black: #000000;
+  --themeColor: #e71c61;
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: var(--black);
+}
+
+header .links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header .links > li {
+  margin-left: 2rem;
+}
+
+.nav .links i {
+  font-size: 1.5rem;
+}
+
+.nav .links li > a {
+  color: var(--dark-milky);
+  font-weight: 600;
+  font-size: 1em;
+  display: block;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.8rem;
+  transition: all 0.3s;
+}
+
+.nav .links a:hover {
+  color: rgb(252, 142, 8);
+}
+
+.nav .links .account {
+  position: relative;
+}
+
+.nav .links .account-menu {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  height: auto;
+  position: absolute;
+  background: #413f3f;
+  left: -4rem;
+  top: 4.5rem;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, 0.5);
+  padding: 0.8rem;
+}
+
+.nav .links .account:hover .account-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav .links .account-menu a {
+  display: block;
+  padding: 0.2rem;
+}
+
+.account-menu .account-icon {
+  margin-right: 1rem;
+}
+
+.account .user-icon {
+  margin-right: 0.4rem;
+}
+
+.account .arrow {
+  margin-left: 0.4rem;
+}
+
+.account-menu > li {
+  padding-bottom: 1rem;
+}
+
+.account-menu li:first-of-type {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.1rem solid rgba(214, 189, 188, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.nav .cart {
+  position: relative;
+}
+
+.nav .item-count {
+  display: block;
+  height: 1.2rem;
+  width: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--dark-milky);
+  color: var(--main-white);
+  position: absolute;
+  top: 0.4rem;
+  right: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.nav .logo {
+  width: 10rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2.5rem;
+  background: linear-gradient(
+    to right,
+    rgb(37, 37, 37) 40%,
+    rgb(46, 42, 42) 60%
+  );
+}
+
+.nav .logo .letter-left {
+  color: var(--themeColor);
+  text-transform: uppercase;
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+.nav .logo .letter-right {
+  color: var(--main-white);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.nav .left img {
+  width: 8rem;
+  height: 2.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 40%,
+    rgb(46, 42, 42) 60%
+  );
+  padding: 1.5rem;
+  position: relative;
+  height: 90vh;
+  animation-name: hero-animate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.hero .left {
+  color: var(--milky);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .left h1 {
+  color: var(--dark-orange);
+  position: absolute;
+  top: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2.5em;
+}
+
+.hero .left h4 {
+  color: var(--light-green);
+  font-size: 1.3rem;
+  position: absolute;
+  top: 8rem;
+}
+
+.hero .left p {
+  line-height: 2rem;
+  text-align: left;
+}
+
+.hero .left .px {
+  color: var(--dark-orange);
+}
+
+.hero .left .btn {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-orange);
+  width: 4rem;
+  height: 4rem;
+  padding: 0.8rem;
+  position: absolute;
+  bottom: 4rem;
+  border-radius: 50%;
+  color: var(--main-white);
+  transition: all 0.5s;
+  cursor: pointer;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(254, 90, 4, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(241, 120, 54, 0.2);
+  }
+}
+
+.btn .animated-icon {
+  font-size: 2rem;
+}
+
+.hero .left .btn:hover .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn .menu {
+  position: absolute;
+  top: -11.8rem;
+  left: 0.2rem;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+  background: var(--dark-orange);
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+}
+
+.btn .menu a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 12rem;
+  height: 3rem;
+  transition: all 0.5s;
+}
+
+.btn .menu .menu-icon {
+  color: var(--dark-orange);
+  margin-right: 0.3rem;
+  font-size: 1.3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--main-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.btn .menu-icon:hover {
+  background: var(--dark-orange);
+  color: var(--main-white);
+  transform: rotate(-35deg);
+}
+
+.btn .menu a:hover .desc {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s;
+}
+
+.btn .menu .desc {
+  background: var(--main-white);
+  display: block;
+  width: auto;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.3rem;
+  color: var(--dark-orange);
+  font-weight: 600;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero .left .btn .btn-text {
+  margin-right: 0.5rem;
+}
+
+.hero img {
+  width: 30rem;
+  height: 30rem;
+  animation-duration: 0.3s;
+  animation-name: watch-slide;
+  animation: watch-slide 3s linear infinite;
+  transition: all 0.3ms;
+}
+
+.hero .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@keyframes watch-slide {
+  from {
+    transform: scale(0.99);
+  }
+
+  75% {
+    transform: scale(1.05);
+  }
+
+  to {
+    transform: scale(0.99);
+  }
+}
